@@ -1,0 +1,142 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+#sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #111;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    transition: transform .3s ease;
+}
+
+.menu-label {
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: #555;
+    padding: 0 20px 8px;
+    margin: 0;
+}
+
+#sidebar a {
+    display: block;
+    padding: 12px 20px;
+    color: #bbb;
+    text-decoration: none;
+    font-size: .95rem;
+    border-left: 3px solid transparent;
+    transition: color .2s, border-color .2s, background .2s;
+}
+
+#sidebar a:hover {
+    color: #fff;
+    background: #1e1e1e;
+    border-left-color: #fff;
+}
+
+#contenu {
+    margin-left: 200px;
+    min-height: 100vh;
+}
+
+.haut {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 16px 32px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.haut img {
+    height: 60px;
+    object-fit: contain;
+}
+
+.name h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    color: #1a1a1a;
+}
+
+.corps {
+    padding: 50px 40px;
+    color: #555;
+}
+
+#topbar {
+    display: none;
+    background: #111;
+    padding: 12px 16px;
+    align-items: center;
+    gap: 12px;
+}
+
+#topbar button {
+    background: none;
+    border: 1px solid #444;
+    color: #ccc;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+#topbar span {
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 600;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.4);
+    z-index: 999;
+}
+#overlay.show { display: block; }
+
+@media (max-width: 768px) {
+    #sidebar {
+        transform: translateX(-100%);
+    }
+    #sidebar.open {
+        transform: translateX(0);
+    }
+    #contenu {
+        margin-left: 0;
+    }
+    #topbar {
+        display: flex;
+    }
+    .haut {
+        padding: 14px 18px;
+    }
+    .haut img {
+        height: 44px;
+    }
+    .name h1 {
+        font-size: 1.1rem;
+    }
+    .corps {
+        padding: 44px 38px;
+    }
+}
+.corps img{
+    width: 300px;
+    display: block;
+    margin: auto;
+}
